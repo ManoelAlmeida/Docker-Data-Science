@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  api:
+    container_name: prof_camp_projet_api
+    build:
+      context: ./api
+      dockerfile: Dockerfile-up
+    command: tail -f /dev/null #python main.py
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./api:/app
+
+  jupyter:
+    container_name: typification_api
+    image: jupyter/datascience-notebook
+    command: start-notebook.sh --NotebookApp.token=''
+    working_dir: /app
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./jupyter:/home/jovyan/work
+    environment:
+      - GRANT_SUDO=yes
+
+
