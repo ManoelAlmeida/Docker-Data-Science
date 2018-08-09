@@ -7,4 +7,5 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 USER jovyan
-RUN pip install pandas-validator outlier-utils
+COPY requirements.txt ./
+RUN pip install -r requirements.txt

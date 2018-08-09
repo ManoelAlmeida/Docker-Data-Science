@@ -1,0 +1,4 @@
+tensorflow
+tensorflow-gpu
+pandas-validator
+outlier-utils

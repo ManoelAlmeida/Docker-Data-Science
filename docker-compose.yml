@@ -2,7 +2,7 @@ version: '3'
 
 services:
   api:
-    container_name: prof_camp_projet_api
+    container_name: projet_api
     build:
       context: ./api
       dockerfile: Dockerfile-up
