@@ -9,14 +9,14 @@ services:
     command: tail -f /dev/null #python main.py
     working_dir: /app
     ports:
-      - "8080:8080"
+      - "8181:8080"
     volumes:
       - ./api:/app
 
   jupyter:
-    container_name: typification_api
+    container_name: jupyter_notebook
     image: jupyter/datascience-notebook
-    command: start-notebook.sh --NotebookApp.token=''
+    command: start-notebook.sh --NotebookApp.token='' --
     working_dir: /app
     ports:
       - "8888:8888"
