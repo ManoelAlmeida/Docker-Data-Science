@@ -6,7 +6,7 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile-up
-    command: tail -f /dev/null #python main.py
+    command: tail -f /dev/null
     working_dir: /app
     ports:
       - "8181:8080"
@@ -16,7 +16,7 @@ services:
   jupyter:
     container_name: jupyter_notebook
     image: jupyter/datascience-notebook
-    command: start-notebook.sh --NotebookApp.token='' --
+    command: start-notebook.sh --NotebookApp.token=''
     working_dir: /app
     ports:
       - "8888:8888"
